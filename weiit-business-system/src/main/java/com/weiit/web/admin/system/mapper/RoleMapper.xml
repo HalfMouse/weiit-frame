@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weiit.web.admin.system.mapper.RoleMapper">
+
+	<!-- 根据管理员ID查询管理员拥有的角色 -->
+	 <select id="selectRolesByManagerId"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select 
+        	r.id,
+			r.manager_id,
+			r.role_id
+        from 
+        system_manager_role r 
+        left join system_role mr on r.role_id = mr.role_id
+        where r.manager_id = #{manager_id}
+    </select>
+    
+ 	<!-- 根据角色ID查询拥有的菜单列表 -->
+	<select id="selectResourceByRoles"  resultType="com.weiit.core.entity.E"  parameterType="java.util.List">
+        select distinct 
+        	r.resource_id,
+			r.resource_name,
+			r.parent_id,
+			r.resource_sign,
+			r.type,
+			r.rest_url,
+			r.level,
+			r.css_icon,
+			r.is_show,
+			r.description,
+			r.state,
+			r.is_deleted
+		from system_resource r
+        left join system_role_resource rr on r.resource_id=rr.resource_id
+        where r.is_deleted=0  and rr.role_id in
+        <foreach collection="list"  item="role" separator="," open="(" close=")">
+            #{role.role_id}
+        </foreach>
+     </select>
+     
+     <select id="selectList" resultType="com.weiit.core.entity.E"  parameterType="map">
+	     select 
+	     	role_id,
+	     	role_id validate_id,
+			role_name,
+			role_sign,
+			parent_id,
+			description,
+			is_deleted
+	 	 from system_role
+	     where 1=1 and is_deleted=0
+	     <if test="role_names != null and role_names != ''">
+	         and role_name like concat('%',#{role_names},'%')
+	     </if>
+	     <!-- 申明，如果开启则表示，查看权限列表时只能查看属于自己创建的角色，自己本身角色将不会展示 
+	      <if test="role_id != null">
+	         and parent_id=#{role_id} and create_id=#{manager_id}
+	     </if>
+	     -->
+	     <!-- 申明，如果开启则表示，查看权限列表时查看自己所创建的子权限与自己本身权限列表,不会看到别人的权限。
+	     <if test="role_id != null">
+	         and (parent_id=#{role_id} or role_id=#{role_id})
+	     </if> -->
+     </select>
+     
+     <select id="selectOne" resultType="com.weiit.core.entity.E"  parameterType="map">
+     	select  
+     		role_id,
+     		role_id validate_id,
+			role_name,
+			role_sign,
+			parent_id,
+			description,
+			is_deleted
+	 	from system_role where role_id=#{validate_id} and is_deleted=0
+     </select>
+     
+	 <insert id="insert"  parameterType="map">
+        insert into system_role
+        (
+			role_name,
+			role_sign,
+			description,
+			parent_id,
+			create_id
+        )
+        values
+        (
+			#{role_name},
+			#{role_sign},
+			#{description},
+			#{parent_id},
+			#{manager_id}
+		
+        )
+     </insert>
+     
+     <delete id="remove"   parameterType="map">
+        delete from system_role  where role_id=#{validate_id}
+     </delete>
+     
+     <update id="edit"   parameterType="map">
+        update system_role 
+        set
+        <if test="role_name!=null and role_name!=''">
+       	 	 role_name=#{role_name},
+        </if>
+        <if test="role_sign!=null and role_sign!=''">
+       		role_sign=#{role_sign},
+        </if>
+        description=#{description}
+        where role_id=#{validate_id}
+     </update>
+     
+     <!-- 角色拥有菜单批量入库 -->
+      <insert id="insertRoleResource"  parameterType="map">
+        insert into system_role_resource
+        (
+			role_id,
+			resource_id
+        )
+        values
+        <foreach  collection="resources" item="item" index="index" separator=",">
+        (
+        	#{validate_id}
+        	,#{item}
+        )
+        </foreach>
+     </insert>
+     
+    <!-- 删除角色拥有的菜单 -->
+     <delete id="deleteRoleResource" parameterType="map">
+     	delete from system_role_resource where role_id=#{validate_id}
+     </delete>
+</mapper>

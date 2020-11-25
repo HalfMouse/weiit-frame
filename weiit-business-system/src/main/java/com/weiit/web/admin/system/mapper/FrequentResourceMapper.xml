@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weiit.web.admin.system.mapper.FrequentResourceMapper">
+     
+ 	 <select id="selectOne"  resultType="com.weiit.core.entity.E"  parameterType="map">
+         select
+			id,
+			manager_id,
+			resource_id
+         from 
+         system_frequent_resource
+        where 1=1 
+        <if test="manager_id!=null">
+       		and manager_id=#{manager_id}
+        </if>
+    </select>
+   
+	<select id="selectList"  resultType="com.weiit.core.entity.E"  parameterType="map">
+         select
+			id,
+			manager_id,
+			resource_id
+         from 
+         system_frequent_resource
+         where 1=1 
+         and manager_id=#{manager_id}
+    </select>
+    
+	<insert id="insert"  parameterType="map" >
+        insert into system_frequent_resource
+        (
+			manager_id,
+			resource_id
+        )
+        values
+        <foreach collection="resource_id" item="item" separator="," index="index">
+        (
+        	#{manager_id},
+        	#{item}
+        )
+        </foreach>
+    </insert>
+     
+    <delete id="remove"   parameterType="map">
+        delete from system_frequent_resource where manager_id=#{manager_id}
+    </delete>
+</mapper>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weiit.web.admin.system.mapper.ResourceMapper">
+	 
+	 <insert id="insert"  parameterType="map">
+        insert into system_resource
+        (
+			resource_name,
+			parent_id,
+			resource_sign,
+			type,
+			rest_url,
+			level,
+			css_icon,
+			is_show,
+			description
+        )
+        values
+        (
+	        #{resource_name},
+			#{parent_id},
+			#{resource_sign},
+			#{type},
+			#{rest_url},
+			#{level},
+			#{css_icon},
+			#{is_show},
+			#{description}
+        )
+     </insert>
+     
+     <delete id="remove"   parameterType="map">
+        delete from system_resource where resource_id=#{validate_id}
+     </delete>
+     
+     <update id="updateState"   parameterType="map">
+        update system_resource set state=#{state} where resource_id=#{validate_id}
+     </update>
+     
+     <update id="edit"   parameterType="map">
+        update system_resource 
+        set
+        <if test="resource_name!=null and resource_name!=''">
+       	 	 resource_name=#{resource_name},
+        </if>
+        <if test="parent_id!=null">
+        	 parent_id=#{parent_id},
+        </if>
+        <if test="resource_sign!=null and resource_sign!=''">
+       		resource_sign=#{resource_sign},
+        </if>
+        <if test="type!=null">
+       		type=#{type},
+        </if>
+        <if test="rest_url!=null and rest_url!=''">
+      		rest_url=#{rest_url},
+        </if>
+        <if test="level!=null">
+        	level=#{level},
+        </if>
+        <if test="css_icon!=null and css_icon!=''">
+        	css_icon=#{css_icon},
+        </if>
+        <if test="is_show!=null">
+        	is_show=#{is_show},
+        </if>
+        <if test="description!=null and description!=''">
+        	description=#{description},
+        </if>
+        resource_id=resource_id
+        where resource_id=#{validate_id}
+     </update>
+     
+	 <select id="selectList"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select 
+        	resource_id,
+        	resource_id validate_id,
+			resource_name,
+			parent_id,
+			resource_sign,
+			type,
+			rest_url,
+			level,
+			css_icon,
+			is_show,
+			description,
+			state,
+			is_deleted
+		from 
+		system_resource where is_deleted=0 
+        <if test="type!=null and type!='' and type!=0">
+        	and type=#{type}
+        </if>
+        <!-- 如果角色id不为空  则加载角色拥有的菜单 -->
+        <if test="role_id!=null and role_id!='' and role_id!=0">
+        	and resource_id in (select resource_id from system_role_resource where role_id=#{role_id})
+        </if>
+     </select>
+     
+	 <select id="selectOne"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select 
+        	resource_id,
+        	resource_id validate_id,
+			resource_name,
+			parent_id,
+			resource_sign,
+			type,
+			rest_url,
+			level,
+			css_icon,
+			is_show,
+			description,
+			state,
+			is_deleted
+	 	from 
+	 	system_resource where resource_id=#{validate_id} and is_deleted=0
+     </select>
+	
+</mapper>

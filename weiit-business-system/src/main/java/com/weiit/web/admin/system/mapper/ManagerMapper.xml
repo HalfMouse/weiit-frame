@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.weiit.web.admin.system.mapper.ManagerMapper">
+	 
+	 <!-- 新增 管理员，并返回id主键-->
+	 <insert id="insert"  parameterType="map" useGeneratedKeys="true" keyProperty="manager_id">
+        insert into system_manager
+        (
+			manager_name,
+			account_name,
+			password,
+			description,
+			create_by,
+			create_time,
+			update_time,
+			type,
+			parent_id,
+			locked,
+			state
+        )
+        values
+        (
+			#{manager_name},
+			#{account_name},
+			#{password},
+			#{description},
+			#{create_by},
+			now(),
+			now(),
+			#{type},
+			#{parent_id},
+			#{locked},
+			#{state}
+        )
+     </insert>
+     
+     <update id="edit"   parameterType="map">
+        update system_manager 
+        set
+        <if test="manager_name!=null and manager_name!=''">
+       	 	 manager_name=#{manager_name},
+        </if>
+        <if test="account_name!=null and account_name!=''">
+       		account_name=#{account_name},
+        </if>
+        <if test="description!=null and description!=''">
+       		description=#{description},
+        </if>
+        <if test="locked!=null">
+       		locked=#{locked},
+        </if>
+        <if test="type!=null">
+       		type=#{type},
+        </if>
+        <if test="state!=null">
+       		state=#{state},
+        </if>
+        update_time=now()
+        where manager_id=#{validate_id}
+     </update>
+     
+     <update id="editManagerPassword"   parameterType="map">
+        update system_manager 
+        set
+        	password=#{password},
+        	update_time=now()
+        where manager_id=#{validate_id}
+     </update>
+     
+	 <insert id="insertManagerAndRole"  parameterType="map">
+        insert into system_manager_role
+        (
+			manager_id,
+			role_id
+
+        )
+        values
+        (
+	        #{manager_id},
+			#{role_id}
+        )
+     </insert>
+     
+ 	 <select id="selectOne"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select
+        	manager_id,
+	        manager_id validate_id,
+			manager_name,
+			account_name,
+			password,
+			description,
+			create_by,
+			create_time,
+			update_time,
+			type,
+			parent_id,
+			locked,
+			state,
+			is_deleted
+        from 
+        system_manager
+        where 1=1 and is_deleted=0 
+        <if test="validate_id!=null">
+       		and manager_id=#{validate_id}
+        </if>
+        <if test="account_name!=null and account_name!=''">
+       		and account_name=#{account_name} 
+        </if>
+    </select>
+    
+    <select id="login"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select
+	        manager_id,
+	        manager_id validate_id,
+			manager_name,
+			account_name ,
+			password,
+			description,
+			create_by,
+			create_time,
+			update_time,
+			type,
+			parent_id,
+			locked,
+			state,
+			is_deleted
+		from system_manager 
+        where account_name=#{account_name} and password=#{password} and is_deleted=0 
+    </select>
+    
+	<select id="selectList"  resultType="com.weiit.core.entity.E"  parameterType="map">
+        select
+	        manager_id,
+	        manager_id validate_id,
+			manager_name,
+			account_name,
+			password,
+			description,
+			create_by,
+			create_time,
+			update_time,
+			type,
+			parent_id,
+			locked,
+			state,
+			is_deleted
+		from 
+        system_manager
+        where 1=1 and is_deleted=0 
+        and (manager_id=#{manager_id} or parent_id=#{manager_id})
+        <if test="manager_names!=null and manager_names!=''">
+        	and manager_name like concat('%',#{manager_names},'%')
+        </if>
+    </select>
+   
+    <delete id="remove"   parameterType="map">
+        delete from system_manager  where manager_id=#{validate_id}
+    </delete>
+     
+    <delete id="removeManagerAndRole"   parameterType="map">
+        delete from system_manager_role where manager_id=#{validate_id}
+    </delete>
+</mapper>
