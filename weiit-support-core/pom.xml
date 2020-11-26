@@ -24,27 +24,5 @@
             <artifactId>servlet-api</artifactId>
             <version>${servlet.api.version}</version>
         </dependency>
-        
-       <!-- https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-parent
-		<dependency>
-		  <groupId>com.github.binarywang</groupId>
-		  <artifactId>weixin-java-mp</artifactId>
-		  <version>3.0.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>com.github.binarywang</groupId>
-		  <artifactId>weixin-java-miniapp</artifactId>
-		  <version>3.0.0</version>
-		</dependency>
-		<dependency>
-		  <groupId>com.github.binarywang</groupId>
-		  <artifactId>weixin-java-pay</artifactId>
-		  <version>3.0.0</version>
-		</dependency>
-        <dependency>
-		  <groupId>com.github.binarywang</groupId>
-		  <artifactId>weixin-java-open</artifactId>
-		  <version>3.0.0</version>
-		</dependency> -->
   </dependencies>
 </project>

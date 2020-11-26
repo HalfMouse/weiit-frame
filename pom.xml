@@ -16,41 +16,15 @@
 		<!-- 日志相关 -->
 		<slf4j.version>1.7.25</slf4j.version>
 		<log4j.version>1.2.12</log4j.version>
-		<!-- 解析相关 -->
-		<dom4j.version>1.6.1</dom4j.version>
-		<jdom.version>1.1.3</jdom.version>
-		<xstream.version>1.4.3</xstream.version>
-		<!-- apache相关 -->
-		<commons.fileupload.version>1.3.1</commons.fileupload.version>
-		<commons.codec.version>1.9</commons.codec.version>
-		<commons.net.version>3.2</commons.net.version>
-		<commons.logging.version>1.1.3</commons.logging.version>
-		<commons.connections.version>3.2.1</commons.connections.version>
-		<commons.beanutils.version>1.7.0</commons.beanutils.version>
-		<commons.httpclient.version>3.0.1</commons.httpclient.version>
-		<commons.dbcp.version>1.2.2</commons.dbcp.version>
-		<commons.lang.version>2.5</commons.lang.version>
-		<commons.io.version>2.4</commons.io.version>
 		<!-- 请求相关 -->
 		<httpclient.version>4.5.2</httpclient.version>
 		<httpmime.version>4.5.2</httpmime.version>
 		<httpcore.version>4.4.3</httpcore.version>
 		<!-- json相关 -->
 		<fastjson.version>1.2.8</fastjson.version>
-		<json.lib.version>2.2.3</json.lib.version>
-		<json.version>1.0.6</json.version>
-		<jackson.version>2.9.4</jackson.version>
-		<!-- 其他相关 -->
-		<aspectj.version>1.8.9</aspectj.version>
-		<aspectjweaver.version>1.8.9</aspectjweaver.version>
-		<ezmorph.version>1.0.6</ezmorph.version>
-		<netty.version>4.1.4.Final</netty.version>
-		<google.collections.version>1.0</google.collections.version>
-		<cglib.version>3.1</cglib.version>
-		<base64.version>1.3.1</base64.version>
+		<json.lib.version>2.4</json.lib.version>
 		<!-- spring相关 -->
 		<spring.version>4.2.6.RELEASE</spring.version>
-		<hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
 	</properties>
 	<dependencies>
 		<!-- 日志相关 -->
@@ -68,75 +42,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
-		</dependency>
-
-		<!-- 解析相关 -->
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>${dom4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jdom</groupId>
-			<artifactId>jdom</artifactId>
-			<version>${jdom.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>${xstream.version}</version>
-		</dependency>
-
-		<!-- apache相关 -->
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons.fileupload.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>${commons.codec.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-net</groupId>
-			<artifactId>commons-net</artifactId>
-			<version>${commons.net.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>${commons.logging.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId>
-			<version>${commons.connections.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>${commons.beanutils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
-			<version>${commons.httpclient.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>${commons.dbcp.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>${commons.lang.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons.io.version}</version>
 		</dependency>
 
 		<!-- 请求相关 -->
@@ -163,56 +68,10 @@
 			<version>${fastjson.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>net</groupId>
+			<groupId>net.sf.json-lib</groupId>
 			<artifactId>json-lib</artifactId>
 			<version>${json.lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>${json.version}</version>
-		</dependency>
-
-		<!-- 其他相关 -->
-		<dependency>
-			<groupId>net.sf.ezmorph</groupId>
-			<artifactId>ezmorph</artifactId>
-			<version>${ezmorph.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>it.sauronsoftware.base64</groupId>
-			<artifactId>Base64</artifactId>
-			<version>${base64.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.collections</groupId>
-			<artifactId>google-collections</artifactId>
-			<version>${google.collections.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>${cglib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectjweaver.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate.validator.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-			<version>${netty.version}</version>
+			<classifier>jdk15</classifier> 
 		</dependency>
 
 		<!-- Spring相关包 -->
