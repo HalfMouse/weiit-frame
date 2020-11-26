@@ -24,8 +24,8 @@ public class WeiitLogisticsConfig {
 	 * 阿里云物流服务
 	 */
 	public static String expressAliAppKey="25973631";
-	public static String expressAliAppSecret="edf703112b53fda337e7ee3c1ec62971";
-	public static String expressAppCode="21cb0a4a4b0144d79874a469d81cb585";
+	public static String expressAliAppSecret="edf7031xxxxa337e7ee3c1ec62971";
+	public static String expressAppCode="21cb0a4a4bxxx874a469d81cb585";
 	
 	public static  String getExpressOpen() {
 		if(WeiitUtil.getPropertiesKey("expressOpen")!=null){

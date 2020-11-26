@@ -16,19 +16,19 @@ public class WeiitFileConfig {
 	/**
 	 * 腾讯云万象优图配置
 	 */
-	public static String cosAppId="1253191691";
-	public static String cosSecretId="AKIDQjqlbd72NEyXu5cyFOL6riXElDRYJffV";
-	public static String cosSecretKey="vcFhxXwCLMAmCQRGvPL6xhHg0Lftvupc";
-	public static String cosBucketName="weiyuntest";
-	public static String cosRegion="gz";
-	public static String cosPre="mytest";
-	public static String cosDomain="http://weiyuntest-1253191691.image.myqcloud.com";
-	
-	/**
+	public static String cosAppId="12ccc91691";
+	 public static String cosSecretId="AKIDQjqlbd72NEyXcccElDRYJffV";
+	 public static String cosSecretKey="vcFhxXwCLMcccPL6xhHg0Lftvupc";
+	 public static String cosBucketName="weiyuntest";
+	 public static String cosRegion="gz";
+	 public static String cosPre="mytest";
+	 public static String cosDomain="http://weiyuntest-1253191691.image.myqcloud.com";
+
+	 /**
 	 * 阿里云oss图片存储配置
 	 */
-	public static String ossAccessKeyId = "LTAIXbYXUKxfj2CC";
-	public static String ossAccessKeySecret = "H8qtdT6gPmAaox6cUNCDFNvlF5r32c";
+	public static String ossAccessKeyId = "LTAIXbYXXXXfj2CC";
+	public static String ossAccessKeySecret = "H8qtdT6gPmccccCDFNvlF5r32c";
 	public static String ossEndPoint = "http://oss-cn-shenzhen.aliyuncs.com";
 	public static String ossBucketName = "sharenice";
 	public static String ossPre = "life";

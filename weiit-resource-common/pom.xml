@@ -29,20 +29,19 @@
 			<version>3.8</version>
 		</dependency>
 
-		<!-- 二维码支持jar 
-		<dependency> 
-			<groupId>com.weiit.qrcode</groupId>
-			<artifactId>qrcode</artifactId> 
-			<version>1.0</version>   
-		</dependency> -->
-		
+		<!-- 二维码支持jar-->
 		<dependency>
-			<groupId>qrcode</groupId>
-			<artifactId>qrcode</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>E:\maven\repository\com\weiit\qrcode\qrcode\1.0\qrcode-1.0.jar</systemPath>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-extra</artifactId>
+			<version>5.2.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.3.3</version>
+		</dependency>
+
 
 
 		<!-- 短信服务包 -腾讯云短信服务商 -->

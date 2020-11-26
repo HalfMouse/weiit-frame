@@ -36,7 +36,7 @@ public class WeiitFileUtil {
 	 *            文件后缀
 	 * @return
 	 */
-	public String uploadFileByQcloud(byte[] data, String fileFormat) {
+	public static String uploadFileByQcloud(byte[] data, String fileFormat) {
 		// 初始化客户端配置
 		ClientConfig clientConfig = new ClientConfig();
 		// 设置bucket所在的区域，比如广州(gz), 天津(tj)

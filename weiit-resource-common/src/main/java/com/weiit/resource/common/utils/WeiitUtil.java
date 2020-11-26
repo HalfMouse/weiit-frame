@@ -169,7 +169,10 @@ public class WeiitUtil {
         InputStream in = WeiitUtil.class.getClassLoader().getResourceAsStream("resource.properties");   
         try {   
         	if(in!=null){
-        		 prop.load(in);   
+        		 prop.load(in);
+        		 if ( prop.getProperty(key)==null){
+        		 	return null;
+				 }
                  return prop.getProperty(key).trim(); 
         	}
         	return null;
