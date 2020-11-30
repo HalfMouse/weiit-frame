@@ -17,7 +17,7 @@ Weiit是基于Java语言的极速web开发框架，其核心设计目标是开�
  
 ## 二、客户案例
 
-截止2020年，Weiit团队基于自身框架已经成功应用于《中国移动》、《农业银行》、《招商银行》、《杏花楼》、《KKS》、《刚好刚到》、《澳品荟》、《蜗店》等50+优质客户，并通过[蜗店](https://www.wstore.me)产品为300多家企业提供云服务支持。查看 [Weiit案例](https://wei-it.com/case.html?page=case)。
+截止2020年，Weiit团队基于自身框架已经成功应用为300多家企业提供技术支持。Weiit团队还自身开源了一个产品项目，蜗店SAAS电商系统。
 
 《蜗店》线上环境[https://www.wstore.me](https://www.wstore.me)。
 
