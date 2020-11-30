@@ -23,9 +23,9 @@ public class WeiitSMSConfig {
 	/**
 	 * 阿里云短信服务配置
 	 */
-	public static String smsAliAccessKeyId = "LTAIXbYXUKxfj2CC";//阿里云短信的AccessKeyId
-	public static String smsAliAccessKeySecret = "H8qtdT6gPmAaox6cUNCDFNvlF5r32c";//阿里云短信的AccessKeySecret
-	public static String smsAliSign="享够生活";//阿里云短信的签名
+	public static String smsAliAccessKeyId = "LTAIXbYxxxxxxxx";//阿里云短信的AccessKeyId
+	public static String smsAliAccessKeySecret = "H8qtdT6gxxxxxxxxxxxxx";//阿里云短信的AccessKeySecret
+	public static String smsAliSign="美团";//阿里云短信的签名
 	public static  int getSmsOpen() {
 		if(WeiitUtil.getPropertiesKey("smsOpen")!=null){
 			smsQcloudAppId=WeiitUtil.getPropertiesKey("smsOpen");

@@ -27,8 +27,8 @@ public class WeiitFileConfig {
 	 /**
 	 * 阿里云oss图片存储配置
 	 */
-	public static String ossAccessKeyId = "LTAIXbYXXXXfj2CC";
-	public static String ossAccessKeySecret = "H8qtdT6gPmccccCDFNvlF5r32c";
+	public static String ossAccessKeyId = "LTAIXbYxxxxxxxx";
+	public static String ossAccessKeySecret = "H8qtdT6gxxxxxxxxxxxxx";
 	public static String ossEndPoint = "http://oss-cn-shenzhen.aliyuncs.com";
 	public static String ossBucketName = "sharenice";
 	public static String ossPre = "life";
