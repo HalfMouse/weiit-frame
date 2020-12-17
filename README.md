@@ -2,7 +2,7 @@
 
 Weiit是基于Java语言的极速web开发框架，其核心设计目标是开发迅速、代码量少、学习简单、功能强大、轻量级、易扩展、Restful。Weiit适用于快速开发，轻应用型的应用开发，大大降低开发人员投入与维护成本支出，是一款永久免费开源的Web开发框架。
 
-## 框架引用案例-最新下载
+## 框架应用案例-最新下载
 -  gitee开源地址：[https://gitee.com/wei-it/weiit-saas](https://gitee.com/wei-it/weiit-saas)
 -  github开源地址：[https://github.com/HalfMouse/weiit-saas](https://github.com/HalfMouse/weiit-saas)
 
