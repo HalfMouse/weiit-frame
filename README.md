@@ -19,7 +19,7 @@ Weiit是基于Java语言的极速web开发框架，其核心设计目标是开�
 
 截止2020年，Weiit团队基于自身框架已经成功应用为300多家企业提供技术支持。Weiit团队还自身开源了一个产品项目，蜗店SAAS电商系统。
 
-《蜗店》线上环境[https://www.wstore.me](https://www.wstore.me)。
+《蜗店》线上环境[https://www.wstore.me](https://www.wstore.me)。 
 
 《蜗店》目前已开源，测试环境演示：
 
@@ -29,7 +29,8 @@ Weiit是基于Java语言的极速web开发框架，其核心设计目标是开�
 
 渠道端：http://saasplatform.wei-it.com/
 
-
+Github下载：[https://github.com/HalfMouse/weiit-saas](https://github.com/HalfMouse/weiit-saas)
+Gitee下载：[https://gitee.com/wei-it/weiit-saas](https://gitee.com/wei-it/weiit-saas)
 
 
 
