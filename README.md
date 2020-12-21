@@ -496,6 +496,6 @@ public class UserController extends AdminController {
 
 ## 更多支持
 
-![avatar](https://weiit.oss-cn-shenzhen.aliyuncs.com/weiit/2020-12-14/32466155-b422-491d-9541-17d8906de3d9.png)
+![avatar](https://weiit.oss-cn-shenzhen.aliyuncs.com/weiit/2020-12-21/7859568d-9aa1-4f12-8394-645acfd668bd.png)
 
 
