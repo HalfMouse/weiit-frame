@@ -417,3 +417,23 @@ CREATE TABLE `xxl_job_qrtz_triggers` (
 -- Records of xxl_job_qrtz_triggers
 -- ----------------------------
 INSERT INTO `xxl_job_qrtz_triggers` VALUES ('quartzScheduler', '7', '5', '7', '5', null, '1500457640000', '-1', '5', 'PAUSED', 'CRON', '1500457636000', '0', null, '2', '');
+
+
+-- ----------------------------
+-- Table structure for xxl_job_qrtz_trigger_registry
+-- ----------------------------
+DROP TABLE IF EXISTS `xxl_job_qrtz_trigger_registry`;
+CREATE TABLE `xxl_job_qrtz_trigger_registry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `registry_group` varchar(255) NOT NULL,
+  `registry_key` varchar(255) NOT NULL,
+  `registry_value` varchar(255) NOT NULL,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of xxl_job_qrtz_trigger_registry
+-- ----------------------------
+INSERT INTO `xxl_job_qrtz_trigger_registry` VALUES ('3', 'ADMIN', 'ADMIN', '192.168.1.102:8888', '2017-07-19 20:11:37');
+INSERT INTO `xxl_job_qrtz_trigger_registry` VALUES ('4', 'EXECUTOR', 'xxl-job-executor-example', '127.0.0.1:9999', '2017-07-19 20:11:59');
