@@ -4,6 +4,7 @@ package com.weiit.resource.common.utils;
 import cn.hutool.extra.qrcode.QrCodeUtil;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 
 public class WeiitQrCodeUtil {
@@ -47,8 +48,13 @@ public class WeiitQrCodeUtil {
      *            二维码内容
      * @return 二维码地址
      */
-    public String createQRCodeAndUploadQcloud(String content) {
-        return WeiitFileUtil.uploadFileByQcloud(QrCodeUtil.generatePng(content,300,300),"png");
+    public String createQRCodeAndUploadQcloud(String content)  {
+        try {
+            return WeiitUtil.uploadFile(QrCodeUtil.generatePng(content,300,300),"png");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
