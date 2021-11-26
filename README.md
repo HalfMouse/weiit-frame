@@ -25,13 +25,8 @@ Weiit是基于Java语言的极速web开发框架，其核心设计目标是开�
 
 《蜗店》线上环境[https://www.wstore.me](https://www.wstore.me)。 
 
-《蜗店》目前已开源，测试环境演示：
-
-商家端：http://saasmerchant.wei-it.com/       18306668080/123456
-
-平台端：http://saasplatform.wei-it.com/  
-
-渠道端：http://saasplatform.wei-it.com/
+《蜗店》目前已下线，weiit新版saas升级版本环境演示：
+https://www.wei-it.com/
 
 
 
