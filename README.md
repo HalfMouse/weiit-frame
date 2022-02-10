@@ -494,4 +494,5 @@ public class UserController extends AdminController {
 weiit开源支持
 
 
-![avatar](https://cdn.tikcos.cn/saas/tikcos731109726187/erweima_1639367384960.jpeg)
+![avatar](https://cdn.tikcos.cn/saas/tikcos731109726187/haibo_1644462446488.png)
+
